@@ -23,6 +23,7 @@ def multi_of_pairs(list: list, k: int) -> list[int]:
     return multi
 
 
-list = fill_list(5)
+n = int(input('Введите количество значений в списке: '))
+list = fill_list(n)
 multi = multi_of_pairs(list, len(list))
 print(f'{list}, => {multi}')

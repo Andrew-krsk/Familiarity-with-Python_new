@@ -13,7 +13,7 @@ def summ (value):
 
 n = (input('Введите число: '))
 res = n.split(',')
-left_parth = int(res[0])
-right_parth = int(res[1])
-print(f'сумма цифр введенного числа = {summ(left_parth) + summ(right_parth)}')
+left_part = int(res[0])
+right_part = int(res[1])
+print(f'сумма цифр введенного числа = {summ(left_part) + summ(right_part)}')
 
