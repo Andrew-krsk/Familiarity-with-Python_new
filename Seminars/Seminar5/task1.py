@@ -5,9 +5,9 @@
 
 
 
-
-# res = [i for i in s.split() if 'абв' not in i]
-
+s = 'Я люблю абвЖвау иабв Питон'
+res = [i for i in s.split() if 'абв' not in i]
+print(res)
 # res_filt = filter(lambda item: 'абв' not in item, [i for i in s.split()])
 
 

@@ -1,12 +1,18 @@
 # Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
 
 
-def fact(n: int) -> list[int]:
-    list = []
-    for i in range(1, n+1):
-        if n % i == 0:
-            list.append(i)
-    print(f'Список простых множителей числа {n}: {list}')
+# def fact(n: int) -> list[int]:
+#     list = []
+#     for i in range(1, n+1):
+#         if n % i == 0:
+#             list.append(i)
+#     print(f'Список простых множителей числа {n}: {list}')
 
+# n = int(input('Введите натуральное число: '))
+# fact(n)
+
+
+# Вариант 2 включением:
 n = int(input('Введите натуральное число: '))
-fact(n)
+fact = [i for i in range(1, n+1) if n % i == 0]
+print(f'Список простых множителей числа {n}: {fact}')
