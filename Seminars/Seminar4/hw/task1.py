@@ -11,14 +11,12 @@
 
 import math
 
-d = float(input('Введите точность d (пример 0.01, 0.001...): '))
+d = str(float(input('Введите точность d (пример 0.01, 0.001...): ')))
 pi = math.pi
 
-d = str(d)
 d = d.split('.')
-d_acc = d[1]
 count = 0
-for i in d_acc:
+for i in d[1]:
     count += 1
 
 print(round(pi, count))
