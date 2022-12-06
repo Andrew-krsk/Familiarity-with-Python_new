@@ -11,10 +11,9 @@
 
 import math
 
-d = str(float(input('Введите точность d (пример 0.01, 0.001...): ')))
+d = str(float(input('Введите точность d (пример 0.01, 0.001...): '))).split('.')
 pi = math.pi
 
-d = d.split('.')
 count = 0
 for i in d[1]:
     count += 1
