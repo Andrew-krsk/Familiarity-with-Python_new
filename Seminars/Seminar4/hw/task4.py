@@ -12,11 +12,8 @@ def write_to_file(st: str):
     with open('file_sem4_hw4.txt', 'w') as data:
         data.write(st)
 
-def rnd():
-    return random.randint(0,10)
-
 def create_list(k: int) -> list [int]:
-    list = [rnd() for i in range(k+1)]
+    list = [random.randint(0,10) for i in range(k+1)]
     return list
     
 def create_st(list: list[int]) -> str:
