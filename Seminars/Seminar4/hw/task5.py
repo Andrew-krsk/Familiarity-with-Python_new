@@ -10,8 +10,8 @@ def write_file(name: str, st: str):
         data.write(st)
 
 # создание коэффициентов многочлена
-def create_list(k: int) -> list[int]:
-    list = [random.randint(0, 9) for i in range(k+1)]
+def create_list_of_koef(k: int) -> list[int]:
+    list = [random.randint(1, 9) for i in range(k+1)]
     return list
     
 # создание многочлена в виде строки 
@@ -38,7 +38,7 @@ def create_st(list: list[int]) -> str:
     return st
 
 # получение степени многочлена
-def degree_mn(k) -> int:
+def degree_str_to_int(k) -> int:
     if 'x^' in k:
         i = k.find('^')
         num = int(k[i+1])
@@ -49,41 +49,51 @@ def degree_mn(k) -> int:
     return num
 
 # получение коэффицента члена многочлена
-def k_mn(k) -> int:
+def koef_str_to_int(k) -> int:
     if 'x' in k:
         i = k.find('x')
         num = int(k[i-1])
     return num
 
 # разбор многочлена и получение его коэффициентов
-def calc_mn(st: str) -> list[int]:
+def list_of_koef_int(st: str) -> list[int]:
     st = st[0].replace(' ', '').split('=')
     st = st[0].split('+')
     lst = []
     length = len(st)
-    if degree_mn(st[-1]) == -1:
+    if degree_str_to_int(st[-1]) == -1:
         lst.insert(0, int(st[-1]))
+
+        # Создать словарь и добавить значение degree_str_to_int[-1] : степень 0
+
         length -= 1
-        degree = 1 # степень
+    degree = 1 # степень
     index = length-1 # индекс
     while index >= 0:
-        if degree_mn(st[index]) != -1 and degree_mn(st[index]) == degree:
-            lst.insert(0, k_mn(st[index]))
+        if degree_str_to_int(st[index]) != -1 and degree_str_to_int(st[index]) == degree:
+            lst.insert(0, koef_str_to_int(st[index]))
+
+            # Добавление значения в словарь degree_str_to_int(st[index]) : степень index
+
             index -= 1
             degree += 1
         else:
             lst.insert(0, 0)
             degree += 1
+
+            # Добавление значения в словарь значение 0 : степень index
+
+    print(lst)
     return lst
     
 # создание двух файлов
 
 k1 = int(input("Введите натуральную степень для первого файла k = "))
 k2 = int(input("Введите натуральную степень для второго файла k = "))
-koef1 = create_list(k1)
-koef2 = create_list(k2)
-write_file("file_sem4_hw5_1.txt", create_st(koef1))
-write_file("file_sem4_hw5_2.txt", create_st(koef2))
+list_of_koef1 = create_list_of_koef(k1)
+list_of_koef2 = create_list_of_koef(k2)
+write_file("file_sem4_hw5_1.txt", create_st(list_of_koef1))
+write_file("file_sem4_hw5_2.txt", create_st(list_of_koef2))
 
 # нахождение суммы многочлена
 
@@ -92,15 +102,17 @@ with open('file_sem4_hw5_1.txt', 'r') as data:
 with open('file_sem4_hw5_2.txt', 'r') as data:
     st2 = data.readlines()
 
-print(f"Первый многочлен {st1}")
-print(f"Второй многочлен {st2}")
+print(f'Первый многочлен {st1}')
+print(f'Второй многочлен {st2}')
 
-lst1 = calc_mn(st1)
-lst2 = calc_mn(st2)
+lst1 = list_of_koef_int(st1)
+lst2 = list_of_koef_int(st2)
 length = len(lst1)
 if len(lst1) > len(lst2):
-    length = len(lst2)
+    length = len(lst2) # length = какое больше (len(lst1) или (len(lst2)))
     
+# Из 2 словарей создать 2 списка со значениями по индексам и сложить их
+
 lst_new = [lst1[i] + lst2[i] for i in range(length)]
 
 if len(lst1) > len(lst2):
@@ -111,6 +123,7 @@ else:
     mm = len(lst2)
     for i in range(length,mm):
         lst_new.append(lst2[i])
+        
 write_file("file_sem4_hw5_res.txt", create_st(lst_new))
 with open('file_sem4_hw5_res.txt', 'r') as data:
     st3 = data.readlines()
