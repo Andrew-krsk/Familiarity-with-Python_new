@@ -17,7 +17,7 @@ import random
 
 # Игра PvP
 
-def lottery():
+def lottery() -> list[int]:
     n = random.randint(1, 2)
     lst = []
     if n == 1:
@@ -26,7 +26,7 @@ def lottery():
         lst = [2, 1]
     return lst
 
-def game_PvP(candies, lst):
+def game_PvP(candies: int, lst: list[int]):
     while candies > 0:
         n = int(input(f'Игрок {lst[0]} ваш ход. Напишите сколько конфет вы возьмете (от 1 до 28): '))
         candies -= n
@@ -43,7 +43,7 @@ def game_PvP(candies, lst):
             print(f'Игра окончена. Игрок {lst[1]} победил')
             break
 
-# candies = int(2021)
+# candies = 2021
 # lst = lottery()
 # print(f'Игра начинается. Количество конфет {candies}')
 # game_PvP(candies, lst)
@@ -52,7 +52,7 @@ def game_PvP(candies, lst):
 
 # Игра PvB
 
-def lottery():
+def lottery() -> list:
     n = random.randint(1, 2)
     lst = []
     if n == 1:
@@ -61,7 +61,7 @@ def lottery():
         lst = ['Бот', 1]
     return lst
 
-def game_PvB(candies, lst):
+def game_PvB(candies: int, lst: list):
     if lst[0] == 1:
         while candies > 0:
             n = int(input('Игрок, ваш ход. Напишите сколько конфет вы возьмете (от 1 до 28): '))
@@ -95,7 +95,7 @@ def game_PvB(candies, lst):
             if candies <= 0:
                 print('Игра окончена. Игрок победил')
 
-# candies = int(2021)
+# candies = 2021
 # lst = lottery()
 # print(f'Игра начинается. Количество конфет {candies}')
 # game_PvB(candies, lst)
@@ -104,7 +104,7 @@ def game_PvB(candies, lst):
 
 # Игра PvSmart_Bot
 
-def lottery():
+def lottery() -> list:
     n = random.randint(1, 2)
     lst = []
     if n == 1:
@@ -113,7 +113,7 @@ def lottery():
         lst = ['Бот', 1]
     return lst
 
-def first_step_smart_Bot(candies, max_step):
+def first_step_smart_Bot(candies: int, max_step: int) -> int:
     n = candies % (max_step + 1)
     print('Бот ходит')
     print(f'Бот берет количество конфет = {n}')
@@ -124,7 +124,7 @@ def first_step_smart_Bot(candies, max_step):
         print('Игра окончена. Бот победил')
     return candies
     
-def game_PvSmartBot(candies, max_step):
+def game_PvSmartBot(candies: int, max_step: int):
     while candies > 0:
         n = int(input('Игрок ваш ход. Напишите сколько конфет вы возьмете (от 1 до 28): '))
         candies -= n
@@ -145,8 +145,8 @@ def game_PvSmartBot(candies, max_step):
             print('Игра окончена. Бот победил')
 
 
-candies = int(121)
-max_step = int(28)
+candies = 2021
+max_step = 28
 lst = lottery()
 print(f'Игра начинается. Количество конфет {candies}')
 if lst[0] == 1:

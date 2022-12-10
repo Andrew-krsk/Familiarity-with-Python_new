@@ -4,7 +4,7 @@
 # 2 - нолик
 
 
-def match_with_win_combinations_1(lst):
+def match_with_win_combinations_1(lst: list[int]) -> int:
     if lst[0][0] == 1 and lst[0][1] == 1 and lst[0][2] == 1:
         return 1
     elif lst[1][0] == 1 and lst[1][1] == 1 and lst[1][2] == 1:
@@ -23,7 +23,7 @@ def match_with_win_combinations_1(lst):
         return 1  
 
 
-def match_with_win_combinations_2(lst):
+def match_with_win_combinations_2(lst: list[int]) -> int:
     if lst[0][0] == 1 and lst[0][1] == 1 and lst[0][2] == 2:
         return 1
     elif lst[1][0] == 1 and lst[1][1] == 1 and lst[1][2] == 2:
@@ -41,7 +41,7 @@ def match_with_win_combinations_2(lst):
     elif lst[0][2] == 1 and lst[1][1] == 1 and lst[2][0] == 2:
         return 1  
 
-def print_matrix(lst):
+def print_matrix(lst: list[int]):
     for i in range(len(lst)):
         print(lst[i])
 
