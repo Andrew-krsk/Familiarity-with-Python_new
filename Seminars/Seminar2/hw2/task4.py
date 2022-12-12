@@ -10,13 +10,13 @@
 # Вывод: 0
 
 n = int(input('Введите число n: '))
-list_n = []
-for item in range(-n, n + 1):
-    list_n.append(item)
+list_n = [i for i in range(-n, n + 1)]
+# for i in range(-n, n + 1):
+#     list_n.append(i)
     
 m = input('Введите номера индексов одной строкой через пробел: ')
 res = m.split(" ")
-list_m = [int(item) for item in res]
+list_m = [int(i) for i in res]
 
 multi = 1
 for i in range(len(list_m)):

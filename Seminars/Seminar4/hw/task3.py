@@ -4,11 +4,11 @@
 # Вывод: [2, 3]
 
 
-def orig_num(list: list [int]) -> list [int]:
+def orig_num(lst: list [int]) -> list [int]:
     lst_out = []
-    for j in list:
+    for j in lst:
         count = 0
-        for i in list:
+        for i in lst:
             if j == i:
                 count += 1
         if count < 2:
@@ -16,6 +16,6 @@ def orig_num(list: list [int]) -> list [int]:
     return lst_out
 
 
-list = [1, 1, 2, 3, 4, 4, 4, 5]
-print(orig_num(list))
+lst = [1, 1, 2, 3, 4, 4, 4, 5]
+print(orig_num(lst))
 

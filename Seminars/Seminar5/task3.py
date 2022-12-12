@@ -15,4 +15,3 @@ print(my_li)
 
 # [my_li.append(li[i]) for i in range(1, len(li)) if my_li[-1] < li[i]]
 # print(my_li)
-

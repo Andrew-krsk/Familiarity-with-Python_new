@@ -2,7 +2,7 @@
 # чтобы выполнялось условие A[i] - 1 = A[i-1]. Найдите это число.
 # 1 2 3 4 5 7 8 9
 
-str_n= '1 2 3 4 5 7 8 9'
+str_n = '1 2 3 4 5 7 8 9'
 str_n = list(map(int,(str_n.split())))
 print(str_n)
 i=0
@@ -11,4 +11,3 @@ while i < len(str_n):
         print(str_n[i]+1)
         break
     i+=1
-

@@ -1,11 +1,11 @@
 # Реализуйте алгоритм перемешивания списка.
 
-import random
 from random import randint
 
-list = []
-for i in range(10):
-    list.append(randint(-10, 11))
+# list = []
+# for i in range(10):
+#     list.append(randint(-10, 11))
+list = [randint(-10, 11) for i in range(10)]
 
 print(list)
 

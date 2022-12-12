@@ -45,7 +45,8 @@ def print_matrix(lst: list[int]):
     for i in range(len(lst)):
         print(lst[i])
 
-lst = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+# lst = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+lst = [[0 for x in range(3)] for y in range(3)]
 print_matrix(lst)
 steps = 9
 while steps > 5: 

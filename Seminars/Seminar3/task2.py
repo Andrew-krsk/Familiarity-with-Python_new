@@ -5,14 +5,15 @@
 # Вывод: '213213', 'dsf653'
 
 
+# def find_num(lst: list[str], num: str):
+#     for i in range(len(lst)):
+#         if num in lst[i]:
+#             print(lst[i])
 
-def find_num(list: list[str], num: str):
-    for i in range(len(list)):
-        if num in list[i]:
-            print(list[i])
+
+# lst = ['213213', 'dsf653', 'dsf', 'fdh76']
+# num = input('Введите искомое значение: ')
+# find_num(lst, num)
 
 
-list = ['213213', 'dsf653', 'dsf', 'fdh76']
-num = input('Введите искомое значение: ')
 
-find_num(list, num)
