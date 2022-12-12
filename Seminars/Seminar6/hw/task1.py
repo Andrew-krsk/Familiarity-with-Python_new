@@ -59,3 +59,5 @@ n = int(input('Введите количество значений в спис�
 
 lst = [random.randint(1, 10) for i in range(1, n, 2)]                                               # СТАЛО (LIST COMPREHENSION)
 print(sum(lst))
+
+#
